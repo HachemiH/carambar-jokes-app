@@ -44,6 +44,46 @@ L'application est déployée sur Render. Pour déployer, poussez simplement les 
 - Accédez à la landing page.
 - Cliquez sur le bouton "Obtenir une blague" pour afficher une blague aléatoire.
 
+  ## API Endpoints
+
+  ### GET /api/jokes/random
+
+  - Récupère une blague aléatoire.
+
+  ### GET /api/jokes
+
+  - Récupère toutes les blagues.
+
+  ### GET /api/jokes/:id
+
+  - Récupère une blague par ID.
+
+  ### POST /api/jokes
+
+  - Ajoute une nouvelle blague.
+  - Corps de la requête (JSON) :
+    ```json
+    {
+      "question": "Pourquoi les plongeurs plongent-ils toujours en arrière et jamais en avant ?",
+      "answer": "Parce que sinon ils tombent encore dans le bateau."
+    }
+    ```
+
+  ### PUT /api/jokes/:id
+
+  - Met à jour une blague existante.
+  - Corps de la requête (JSON) :
+    ```json
+    {
+      "question": "Pourquoi les plongeurs plongent-ils toujours en arrière et jamais en avant ?",
+      "answer": "Parce que sinon ils tombent encore dans le bateau."
+    }
+    ```
+
+  ### DELETE /api/jokes/:id
+
+  - Supprime une blague existante.
+
 ## Technologies Utilisées
 
 - Node.js

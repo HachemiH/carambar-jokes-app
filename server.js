@@ -6,11 +6,11 @@ const PORT = process.env.PORT || 3000;
 // Middleware pour parser le JSON
 app.use(express.json());
 
-// Route pour récupérer une blague précise
+// Route pour récupérer une blague par ID
 app.get("/api/jokes/:id", async (req, res) => {
-  const { id } = req.params;
   try {
-    const joke = await Joke.findOne({ where: { id: id } });
+    const { id } = req.params;
+    const joke = await Joke.findByPk(id);
     if (joke) {
       res.json(joke);
     } else {

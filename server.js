@@ -1,7 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const path = require("path");
-const setupSwagger = require("./swagger/swagger");
+const setupSwagger = require("./swagger");
 const jokeRoutes = require("./routes/jokeRoutes");
 const app = express();
 const PORT = process.env.PORT || 3000;

@@ -1,12 +1,16 @@
 const express = require("express");
+const cors = require("cors");
 const path = require("path");
-const setupSwagger = require("./swagger");
+const setupSwagger = require("./swagger/swagger");
 const jokeRoutes = require("./routes/jokeRoutes");
 const app = express();
 const PORT = process.env.PORT || 3000;
 
 // Middleware pour parser le JSON
 app.use(express.json());
+
+// Configurer CORS pour permettre les requêtes depuis n'importe quelle origine
+app.use(cors());
 
 // Configurer Swagger
 setupSwagger(app);
